@@ -1,0 +1,35 @@
+server:
+  port: 8082
+
+spring:
+  datasource:
+    username: yous.yoeun
+    initialization-mode: always
+    url: jdbc:postgresql://localhost:5432/schooldb
+    continue-on-error: 'true'
+    password: pgAdmin
+    initialize: 'true'
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+    hibernate:
+      show-sql: 'true'
+      ddl-auto: update
+
+
+jwt:
+  secret: secret
+  expirationDateInMs: 0
+  refreshExpirationDateInMs: 9000000
+
+logging:
+  level:
+    org:
+      hibernate:
+        SQL: DEBUG
+        type:
+          descriptor:
+            sql:
+              BasicBinder: TRACE
